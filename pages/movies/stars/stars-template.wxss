@@ -1,0 +1,24 @@
+.stars-container {
+  /*大容器使用行排列  */
+  display: flex;
+  flex-direction: row;
+}
+
+.stars {
+  /*大容器中的小容器使用弹性盒子模型  */
+  display: flex;
+  flex-direction: row;
+  height: 17rpx;
+  margin-right: 24rpx;
+  margin-top: 7rpx;
+}
+
+.stars image {
+  padding-left: 3rpx;
+  height: 17rpx;
+  width: 17rpx;
+}
+
+.star-score{
+   color: #1f3463;
+}

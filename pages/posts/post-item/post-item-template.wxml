@@ -1,0 +1,23 @@
+<template name="postItem">
+  <view class='post-container'>
+    <!--头像和日期  -->
+    <view class='post-author-data'>
+      <!--控制标签的显示和隐藏(学习知识点)  -->
+      <image class='post-author' src='{{avatar}}'></image>
+      <text class='post-data'>{{date}}{{idx}}</text>
+    </view>
+    <!--文章的标题  -->
+    <text class='post-title'>{{title}}</text>
+    <!--文章的图片  -->
+    <image class='post-image' src='{{imgSrc}}'></image>
+    <!--文章的正文  -->
+    <text class='post-content'>{{content}}</text>
+    <!--喜欢的人数和评论数  -->
+    <view class='post-like'>
+      <image class='post-like-image' src='/images/icon/chat.png'></image>
+      <text class='post-like-font'>{{collection}}</text>
+      <image class='post-like-image' src='/images/icon/view.png'></image>
+      <text class='post-like-font'>{{reading}}</text>
+    </view>
+  </view>
+</template>

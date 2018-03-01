@@ -1,0 +1,28 @@
+<import src="post-item/post-item-template.wxml" />
+
+<view>
+  <swiper autoplay='true' interval='5000' indicator-dots='true' circular='true'>
+    <swiper-item>
+      <image catchtap='onSwiperItemTap' src='/images/wx.png' data-postId="3"></image>
+    </swiper-item>
+    <swiper-item>
+      <image catchtap='onSwiperItemTap' src='/images/vr.png' data-postId="4"></image>
+    </swiper-item>
+    <swiper-item>
+      <image catchtap='onSwiperItemTap' src='/images/iqiyi.png' data-postId="5"></image>
+    </swiper-item>
+  </swiper>
+
+  <!--模板代码复用(这里的item是没有必要进行指定的)
+  item：指代的是子元素的对象
+  idx:指代的是子元素的序号，idx也是有默认值的  -->
+  <block wx:for="{{posts_key}}" wx:for-item="item" wx:for-index="idx">
+    <!--template使用,用三个小点可以吧对象展开就不需要使用在模板代码里面使用item -->
+    <!--把数据绑定到元素的标签里面去  -->
+    <view catchtap='onPostTap' data-postId="{{item.postId}}">
+    <!--不能再template里面加监听函数，加到这里面的话会不会起作用的  -->
+    <template is="postItem" data="{{...item}}"/>
+    </view>
+  </block>
+</view>
+

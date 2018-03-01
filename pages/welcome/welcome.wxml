@@ -1,0 +1,13 @@
+<!--wxml是小程序骨架的文件  -->
+<!--view相当于是HTML的div标签作用，第一个是容器的作用，第二个是分割不同的组件的作用  -->
+<view class='container'>
+  <image class='user-avatar' src='/images/4.png'></image>
+  <text class='user-name'>hello,river</text>
+  <view class='moto-container' bindtap='onTap'>
+    <!--事件和导航进行跳转  -->
+    <!--在做事件绑定的时候默认的是在前面加上bind|catch  -->
+    <!--bind属于冒泡机制：在子类上监听事件发生，父元素上的监听事件也会发生
+    catch是非冒泡机制的:在子类上监听事件发生，父元素上的监听事件不会发生 -->
+    <text class='moto'>开启小程序之旅</text>
+  </view>
+</view>

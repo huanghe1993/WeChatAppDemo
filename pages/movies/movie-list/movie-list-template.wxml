@@ -1,0 +1,23 @@
+<import src="../movie/movie-template.wxml" />
+<template name="movieListTemplate">
+  <view class="movie-list-container">
+    <view class="inner-container">
+      <view class="movie-head">
+        <text class="slogan">{{categoryTitle}}</text>
+        <!--把数据绑定到data-catagory，知道是哪一个的更多  -->
+        <view class='more' catchtap="onMoreTap" data-catagory="{{categoryTitle}}">
+          <text class="more-text">更多</text>
+          <image class="more-img" src="/images/icon/arrow-right.png"></image>
+        </view>
+      </view>
+      <view class="movies-container">
+      <!--模板代码里的模板又是引用的上一层的模板，把movies里面的temp对象用movie代替  -->
+        <block wx:for="{{movies}}" wx:for-item="movie">
+          <template is="movieTemplate" data="{{...movie}}" />
+        </block>
+        <!-- <template is="movieTemplate" />
+        <template is="movieTemplate" /> -->
+      </view>
+    </view>
+  </view>
+</template>
